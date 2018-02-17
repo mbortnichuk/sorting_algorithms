@@ -20,8 +20,7 @@
 ** we sort playing cards in our hands.
 **
 ** 12, 11, 13, 5, 6
-**
-** Let us loop for i = 1 (second element of the array) to 5 (Size of input array)
+** Let's loop for i = 1 (second element of the array) to 5 (Size of input array)
 **
 ** i = 1. Since 11 is smaller than 12, move 12 and insert 11 before 12
 ** 11, 12, 13, 5, 6
