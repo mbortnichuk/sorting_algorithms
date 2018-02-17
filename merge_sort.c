@@ -134,11 +134,11 @@ void	print_array(int arr[], int size)
 	printf("\n");
 }
 
+/* Driver program to test above functions. */
 int main(void)
 {
 	int arr[] = {5, 8, 3, 1, 25, 55, 13, 98};
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
-
 	printf("Given array is: \n");
 	print_array(arr, arr_size);
 
