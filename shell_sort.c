@@ -24,6 +24,7 @@
 ** An array is said to be h-sorted if all sublists of every h’th element is sorted.
 */
 
+
 void	shell_sort(int arr[], int n)
 {
 	int i;
@@ -69,7 +70,7 @@ void	print_array(int arr[], int size)
 /* Driver program to test above functions. */
 int main(void)
 {
-	int arr[] = {54, 1, 34, 3, 8, 666, 12};
+	int arr[] = {2, 54, 23, 7, 5, 666, 68};
 	int arr_size = sizeof(arr) / sizeof(arr[0]);
 	printf("Given array is: \n");
 	print_array(arr, arr_size);
@@ -78,6 +79,6 @@ int main(void)
 
 	printf("Sorted array: \n");
 	print_array(arr, arr_size);
-
+	
 	return (0);
 }
