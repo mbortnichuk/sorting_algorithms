@@ -14,9 +14,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Merges two subarray to arr[].
-// First subarray is arr[one..two].
-// Second subarray is arr[two+1..three].
+/* 
+** Merges two subarray to arr[].
+** First subarray is arr[one..two].
+** Second subarray is arr[two+1..three].
+*/
+
 void	merge_arrays(int arr[], int one, int two, int three)
 {
 	int i;
@@ -26,20 +29,20 @@ void	merge_arrays(int arr[], int one, int two, int three)
 	int n1 = two - one + 1;
 	int n2 = three - two;
 
-	// Create temporary arrays.
+	/* Create temporary arrays. */
 	int left[n1];
 	int right[n2];
 
-	// Copy data to temporary arrays left[] and rigth[].
+	/* Copy data to temporary arrays left[] and rigth[]. */
 	for (i = 0; i < n1; i++)
 		left[i] = arr[one + i];
 	for (j = 0; j < n2; j++)
 		right[j] = arr[two + 1 + j];
 
-	// Merge the temporary arrays back into arr[one...three].
-	i = 0; // initial index of first subarray;
-	j = 0; // initial index of second subarray;
-	k = one; // initial index of merged subarray;
+	/* Merge the temporary arrays back into arr[one...three]. */
+	i = 0; /* initial index of first subarray; */
+	j = 0; /* initial index of second subarray; */
+	k = one; /* initial index of merged subarray; */
 
 	while (i < n1 && j < n2)
 	{
@@ -55,7 +58,7 @@ void	merge_arrays(int arr[], int one, int two, int three)
 		}
 		k++;
 	}
-	// Copy the remainig elements of left[], if there are any.
+	/* Copy the remainig elements of left[], if there are any. */
 	while (i < n1)
 	{
 		arr[k] = left[i];
@@ -70,18 +73,21 @@ void	merge_arrays(int arr[], int one, int two, int three)
 	}
 }
 
-// Left is for left index and Right is right index of the subarray of 
-// arr to be sorted.
+/*
+** Left is for left index and Right is right index of the subarray of 
+** arr to be sorted.
+*/
+
 void	merge_sort(int arr[], int left, int right)
 {
 	int m;
 
 	if (left < right)
 	{
-		// Same as (left + right), but avoids overflow for large left and right.
+		/* Same as (left + right), but avoids overflow for large left and right. */
 		m = left + (right - left) / 2;
 
-		// Sort first and second halves.
+		/* Sort first and second halves. */
 		merge_sort(arr, left, m);
 		merge_sort(arr, m + 1, right);
 
@@ -89,7 +95,10 @@ void	merge_sort(int arr[], int left, int right)
 	}
 }
 
-// To print an array.
+/* 
+** To print an array.
+*/
+
 void	print_array(int arr[], int size)
 {
 	int i;
