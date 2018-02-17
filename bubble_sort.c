@@ -42,3 +42,61 @@
 ** ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
 */
 
+void	my_swap(int *a, int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	bubble_sort(int arr[], int n)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < n - 1)
+	{
+		j = 0;
+		/* Last i elements are already in place. */
+		while (j < n - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+				my_swap(&arr[j], &arr[j + 1]);
+			j++;
+		}
+		i++;
+	}
+}
+
+/* 
+** To print an array.
+*/
+
+void	print_array(int arr[], int size)
+{
+	int i = 0;
+
+	while (i < size)
+	{
+		printf("%d ", arr[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+/* Driver program to test above functions. */
+int main(void)
+{
+	int arr[] = {43, 54, 12, 78, 321, 98, 1, 3};
+	int arr_size = sizeof(arr) / sizeof(arr[0]);
+	printf("Given array is: \n");
+	print_array(arr, arr_size);
+
+	bubble_sort(arr, arr_size);
+
+	printf("Sorted array: \n");
+	print_array(arr, arr_size);
+
+	return (0);
+}
