@@ -22,9 +22,9 @@
 
 void	merge_arrays(int arr[], int one, int two, int three)
 {
-	int i;
-	int j;
-	int k;
+	int i = 0;
+	int j = 0;
+	int k = 0;
 
 	int n1 = two - one + 1;
 	int n2 = three - two;
@@ -34,10 +34,20 @@ void	merge_arrays(int arr[], int one, int two, int three)
 	int right[n2];
 
 	/* Copy data to temporary arrays left[] and rigth[]. */
-	for (i = 0; i < n1; i++)
+	while (i < n1)
+	{
+		left[i] = arr[one + i];
+		i++;
+	}
+	while (j < n2)
+	{
+		right[j] = arr[two + 1 + j];
+		j++;
+	}
+	/*for (i = 0; i < n1; i++)
 		left[i] = arr[one + i];
 	for (j = 0; j < n2; j++)
-		right[j] = arr[two + 1 + j];
+		right[j] = arr[two + 1 + j];*/
 
 	/* Merge the temporary arrays back into arr[one...three]. */
 	i = 0; /* initial index of first subarray; */
@@ -101,10 +111,16 @@ void	merge_sort(int arr[], int left, int right)
 
 void	print_array(int arr[], int size)
 {
-	int i;
-	
-	for (i = 0; i < size; i++)
+	int i = 0;
+
+	while (i < size)
+	{
 		printf("%d ", arr[i]);
+		i++;
+	}
+	
+	/*for (i = 0; i < size; i++)
+		printf("%d ", arr[i]);*/
 	printf("\n");
 }
 
